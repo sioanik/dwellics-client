@@ -5,13 +5,15 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log(import.meta.env.VITE_PASS);
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCh8Q63GL6Mzm8d1lUDritHFlxS8dQoJMc",
-  authDomain: "dwellics-realestate.firebaseapp.com",
-  projectId: "dwellics-realestate",
-  storageBucket: "dwellics-realestate.appspot.com",
-  messagingSenderId: "533095854317",
-  appId: "1:533095854317:web:dfc3e3aca5d9b545ee1ce4"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

@@ -10,7 +10,7 @@ const Login = () => {
     // console.log(userInfo);
 
 
-    const {loginUser, googleLogin, setUser, user} = useContext(AuthContext)
+    const { loginUser, googleLogin, setUser, user } = useContext(AuthContext)
     // console.log(registerUser);
     const location = useLocation()
     const navigate = useNavigate()
@@ -22,21 +22,21 @@ const Login = () => {
         const password = e.target.password.value
         console.log(email, password);
 
-        loginUser(email,password)
+        loginUser(email, password)
     }
 
-    const handleGoogleLogin = () =>{
+    const handleGoogleLogin = () => {
         googleLogin()
-        .then(result => setUser(result.user))
+            .then(result => setUser(result.user))
     }
-    
 
-    useEffect(()=>{
-        if(user){
-            navigate(location.state)
+
+    useEffect(() => {
+        if (user) {
+            navigate(location?.state ? location.state : '/')
 
         }
-    },[user])
+    }, [user])
 
 
     return (
@@ -78,7 +78,7 @@ const Login = () => {
                             </p>
                         </form>
                         <div className="flex justify-evenly m-9">
-                        <button onClick={handleGoogleLogin} className="btn btn-primary">Google Login</button>
+                            <button onClick={handleGoogleLogin} className="btn btn-primary">Google Login</button>
                         </div>
                     </div>
                 </div>
