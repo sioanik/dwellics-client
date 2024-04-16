@@ -16,7 +16,7 @@ import banner4 from '../assets/banner4.jpg'
 const Banner = () => {
     return (
         <div>
-            <Swiper
+            <Swiper className='h-[600px]'
                 // install Swiper modules
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={50}
@@ -29,7 +29,7 @@ const Banner = () => {
             >
 
                 <SwiperSlide>
-                    <div className="hero min-h-screen" style={{ backgroundImage: `url(${banner1})` }}>
+                    <div className="hero h-[600px]" style={{ backgroundImage: `url(${banner1})` }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
@@ -42,7 +42,7 @@ const Banner = () => {
                 </SwiperSlide>
                 
                 <SwiperSlide>
-                    <div className="hero min-h-screen" style={{ backgroundImage: `url(${banner2})` }}>
+                    <div className="hero h-[600px]" style={{ backgroundImage: `url(${banner2})` }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
@@ -55,7 +55,7 @@ const Banner = () => {
                 </SwiperSlide>
                 
                 <SwiperSlide>
-                    <div className="hero min-h-screen" style={{ backgroundImage: `url(${banner3})` }}>
+                    <div className="hero h-[600px]" style={{ backgroundImage: `url(${banner3})` }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
@@ -68,7 +68,7 @@ const Banner = () => {
                 </SwiperSlide>
                 
                 <SwiperSlide>
-                    <div className="hero min-h-screen" style={{ backgroundImage: `url(${banner4})` }}>
+                    <div className="hero h-[600px]" style={{ backgroundImage: `url(${banner4})` }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
