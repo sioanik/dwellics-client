@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/Y8qNvm2/Est01.webp",
+      "title": "Luxury Villa with Ocean View",
+      "segment_name": "Villa",
+      "description": "Breathtaking ocean views, luxurious amenities, spacious living, private pool.",
+      "price": "$1,500,000",
+      "status": "sale",
+      "area": "4000 sq ft",
+      "location": "Malibu, California",
+      "facilities": ["living room", "swimming pool", "kitchen"]
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/276kvdG/est02.jpg",
+      "title": "Modern Apartment in Downtown",
+      "segment_name": "Apartment",
+      "description": "Urban living at its finest, sleek design, panoramic views.",
+      "price": "$3,000 per month",
+      "status": "rent",
+      "area": "1200 sq ft",
+      "location": "New York City, New York",
+      "facilities": ["living room", "gym", "balcony"]
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/kSZvQnQ/est03.jpg",
+      "title": "Cozy Family Home in Suburbia",
+      "segment_name": "House",
+      "description": "Tranquil suburbia, spacious bedrooms, lush backyard, fully-equipped kitchen.",
+      "price": "$400,000",
+      "status": "sale",
+      "area": "2500 sq ft",
+      "location": "Suburban Town, Oakland",
+      "facilities": ["living room", "backyard", "garage"]
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co/dMYJ4qX/Est04.jpg",
+      "title": "Charming Cottage by the Lake",
+      "segment_name": "Cottage",
+      "description": "Serene lakeside retreat, rustic charm, modern comfort, fireplace, lake access.",
+      "price": "$250 per night",
+      "status": "rent",
+      "area": "800 sq ft",
+      "location": "Lakefront, Vermont",
+      "facilities": ["living room", "fireplace", "lake access"]
+    }
+  ]
+  
