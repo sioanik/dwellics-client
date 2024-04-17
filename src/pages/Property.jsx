@@ -34,7 +34,7 @@ const Property = () => {
             <div className="mb-10 hero bg-base-200">
                 <div className="hero-content flex-col lg:flex-row items-start">
                     {/* <img src={prop.image} className="max-w-sm rounded-lg shadow-2xl" /> */}
-                    <div>
+                    <div className="mx-10">
                         {/* <h1 className="text-2xl font-bold">{prop.title}</h1> */}
                         <h1 className="text-red-500 text-2xl font-bold">For {prop.status}</h1>
                         <h1 className="text-red-500 text-2xl font-bold">{prop.price}</h1>
