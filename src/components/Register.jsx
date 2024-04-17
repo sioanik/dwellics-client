@@ -3,6 +3,11 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+{/* <FaEye /> */}
+
+// import { FaEyeSlash } from "react-icons/fa";
+{/* <FaEyeSlash /> */}
 
 const Register = () => {
 
@@ -12,6 +17,8 @@ const Register = () => {
     const {registerUser, setUser} = useContext(AuthContext)
     // console.log(authInfo.registerUser);
     const [error, setError] = useState('')
+
+    const [showPass, setShowPass] = useState(false)
 
 
 
@@ -83,7 +90,13 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                <div className="w-full relative">
+                                <input type={showPass ? "text" : "password"} name="password" placeholder="password" className="w-full input input-bordered" required />
+                                <span className="absolute top-1/3 right-5" onClick={()=> setShowPass(!showPass)}>
+                                    {
+                                showPass ? <FaEyeSlash></FaEyeSlash> :<FaEye></FaEye>
+                                }</span>
+                                </div>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
