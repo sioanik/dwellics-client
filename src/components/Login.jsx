@@ -101,22 +101,28 @@ const Login = () => {
                             </p>
                         </form>
 
-                        {
-                            loginError && toast("Invalid Username/Password")
-                        }
-
-                        {
-                            loginSuccess && toast("Login Successful")
-                        }
-
                         {/* {
+                            loginError ? toast('error')
+                        } */}
+
+                        
+                        {
+                            loginError &&(
+                                <div className="toast toast-top toast-end">
+                                    <div className="bg-red-400 alert alert-info">
+                                        <span className="text-white">{loginError}</span>
+                                    </div>
+                                </div>)
+                        }
+                        
+                        {
                             loginSuccess && (
                                 <div className="toast toast-top toast-end">
                                     <div className="bg-green-400 alert alert-info">
                                         <span className="text-white">{loginSuccess}</span>
                                     </div>
                                 </div>)
-                        } */}
+                        }
                         <div className=" flex justify-evenly">
                             <div className="flex justify-evenly mb-6">
                                 <button onClick={handleGoogleLogin} className="btn btn-primary">Google</button>
