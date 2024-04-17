@@ -1,20 +1,20 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-{/* <FaEye /> */}
+{/* <FaEye /> */ }
 
 // import { FaEyeSlash } from "react-icons/fa";
-{/* <FaEyeSlash /> */}
+{/* <FaEyeSlash /> */ }
 
 const Register = () => {
 
     // const authInfo = useContext(AuthContext)
     // console.log(authInfo.registerUser);
 
-    const {registerUser, setUser} = useContext(AuthContext)
+    const { registerUser, setUser, user } = useContext(AuthContext)
     // console.log(authInfo.registerUser);
     const [error, setError] = useState('')
 
@@ -22,7 +22,7 @@ const Register = () => {
 
 
 
-    const handleRegister = e =>{
+    const handleRegister = e => {
         e.preventDefault()
         const name = e.target.name.value
         const email = e.target.email.value
@@ -30,18 +30,18 @@ const Register = () => {
         const password = e.target.password.value
         console.log(name, email, photo, password);
 
-        if(password.length < 6){
+        if (password.length < 6) {
             setError('Password must be at least 6 characters')
             console.log(error);
             return
         }
 
-        if(!/^(?=.*[A-Z])/.test(password)){
+        if (!/^(?=.*[A-Z])/.test(password)) {
             setError('Password must have an uppercase letter')
             return
         }
 
-        if(!/^(?=.*[a-z])/.test(password)){
+        if (!/^(?=.*[a-z])/.test(password)) {
             setError('Password must have an lowercase letter')
             return
         }
@@ -49,11 +49,19 @@ const Register = () => {
 
         setError('')
         registerUser(email, password)
-        .then(result=>{setUser(result.user)})
-        .catch(error=>setError(error.message))
+            .then(result => { setUser(result.user) })
+            .catch(error => setError(error.message))
     }
 
+    const location = useLocation()
+    const navigate = useNavigate()
 
+
+    useEffect(() => {
+        if (user) {
+            navigate(location?.state ? location.state : '/')
+        }
+    }, [user])
 
     return (
         <div>
@@ -84,24 +92,24 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Photo</span>
                                 </label>
-                                <input type="text" name="photo" placeholder="photo link" className="input input-bordered"/>
+                                <input type="text" name="photo" placeholder="photo link" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
                                 <div className="w-full relative">
-                                <input type={showPass ? "text" : "password"} name="password" placeholder="password" className="w-full input input-bordered" required />
-                                <span className="absolute top-1/3 right-5" onClick={()=> setShowPass(!showPass)}>
-                                    {
-                                showPass ? <FaEyeSlash></FaEyeSlash> :<FaEye></FaEye>
-                                }</span>
+                                    <input type={showPass ? "text" : "password"} name="password" placeholder="password" className="w-full input input-bordered" required />
+                                    <span className="absolute top-1/3 right-5" onClick={() => setShowPass(!showPass)}>
+                                        {
+                                            showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                        }</span>
                                 </div>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
-                            
+
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>
                             </div>

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
@@ -6,11 +6,14 @@ import { AuthContext } from "./AuthProvider";
 
 const Login = () => {
 
+    const [loginError, setLoginError] = useState('');
+    const [loginSuccess, setLoginSuccess] = useState('')
+
     // const userInfo = useContext(AuthContext)
     // console.log(userInfo);
 
 
-    const { loginUser, googleLogin, setUser, user, githubLogin} = useContext(AuthContext)
+    const { loginUser, googleLogin, setUser, user, githubLogin } = useContext(AuthContext)
     // console.log(registerUser);
     const location = useLocation()
     const navigate = useNavigate()
@@ -23,6 +26,11 @@ const Login = () => {
         console.log(email, password);
 
         loginUser(email, password)
+            .then(result => { console.log(result.user) })
+            .catch(error => {
+                console.log(error);
+                setLoginError(error.message)
+            })
     }
 
     const handleGoogleLogin = () => {
@@ -68,7 +76,7 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                                
+
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
@@ -83,19 +91,36 @@ const Login = () => {
                                 </Link>
                             </p>
                         </form>
-                        <div className=" flex justify-evenly">
-                        <div className="flex justify-evenly my-9">
-                            <button onClick={handleGoogleLogin} className="btn btn-primary">Google</button>
-                        </div>
-                        <div className="flex justify-evenly my-9">
-                            <button onClick={handleGithubLogin} className="btn btn-primary">Github</button>
-                        </div>
+
+                            {
+                                loginError &&(
+                                <div className="toast toast-top toast-end">
+                                    <div className="bg-red-400 alert alert-info">
+                                        <span className="text-white">{loginError}</span>
+                                    </div>
+                                </div>)
+                            }
+                            {
+                                loginSuccess &&(
+                                <div className="toast toast-top toast-end">
+                                    <div className="bg-green-400 alert alert-info">
+                                        <span className="text-white">{loginSuccess}</span>
+                                    </div>
+                                </div>)
+                            }
+                            <div className=" flex justify-evenly">
+                                <div className="flex justify-evenly mb-6">
+                                    <button onClick={handleGoogleLogin} className="btn btn-primary">Google</button>
+                                </div>
+                                <div className="flex justify-evenly mb-6">
+                                    <button onClick={handleGithubLogin} className="btn btn-primary">Github</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
+            );
 };
 
-export default Login;
+            export default Login;
