@@ -20,6 +20,12 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><NavLink to={'/'} >Home</NavLink></li>
                             <li><NavLink to={'/contact'} >Contact</NavLink></li>
+                            <li>
+                                <NavLink to={'/update-profile'}>Update Profile</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={'/exclusive'}>Exclusive</NavLink>
+                            </li>
                             {/* <li><a>Home</a></li> */}
 
                         </ul>
@@ -39,6 +45,9 @@ const Navbar = () => {
                             <NavLink to={'/contact'}>Contact</NavLink>
                         </li>
                         <li>
+                            <NavLink to={'/update-profile'}>Update Profile</NavLink>
+                        </li>
+                        <li>
 
                             <NavLink to={'/exclusive'}>Exclusive</NavLink>
                         </li>
@@ -46,10 +55,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex items-center">
-                    <ul className="menu flex justify-center menu-horizontal px-1 gap-4">
-                        <li>
+                    <ul className="menu flex justify-center menu-horizontal px-1">
+                        {/* <li>
                             <NavLink to={'/update-profile'}>Update Profile</NavLink>
-                        </li>
+                        </li> */}
                         {/* <li><a>User Profile</a></li> */}
                         {/* <li>
                             <NavLink to={'/login'}>Login</NavLink>
@@ -75,9 +84,13 @@ const Navbar = () => {
                                 <button onClick={() => logOut()} className='btn btn-sm btn-primary'>Logout</button>
 
                             </div> :
-                            <ul>
-                                <li><NavLink to={'/login'}>Login</NavLink></li>
-                            </ul>
+
+                            <button className='btn btn-xs h-9 btn-primary'>
+                                <NavLink to={'/login'}>Login</NavLink>
+                            </button>
+                            // <ul>
+                            //     <li><NavLink to={'/login'}>Login</NavLink></li>
+                            // </ul>
                         }
                     </div>
                 </div>

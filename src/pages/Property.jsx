@@ -19,14 +19,26 @@ const Property = () => {
             <Helmet>
                 <title>Dwellics | Property Details</title>
             </Helmet>
-            <div className="mb-10 hero min-h-screen bg-base-200">
+            <div className="mx-14">
+            <div className="hero lg:w-2/3 mx-auto mb-3 rounded-3xl min-h-[300px]" style={{ backgroundImage: `url(${prop.image})` }}>
+                    <div className=" rounded-3xl hero-overlay bg-opacity-60"></div>
+                    <div className="hero-content text-center text-neutral-content">
+                        <div className="max-w-md">
+                            <h1 className="mb-5 text-5xl font-bold">{prop.title}</h1>
+                 
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="mb-10 hero bg-base-200">
                 <div className="hero-content flex-col lg:flex-row items-start">
-                    <img src={prop.image} className="max-w-sm rounded-lg shadow-2xl" />
+                    {/* <img src={prop.image} className="max-w-sm rounded-lg shadow-2xl" /> */}
                     <div>
-                        <h1 className="text-2xl font-bold">{prop.title}</h1>
-                        <p className="pb-6">{prop.segment_name}, {prop.area}</p>
+                        {/* <h1 className="text-2xl font-bold">{prop.title}</h1> */}
                         <h1 className="text-red-500 text-2xl font-bold">For {prop.status}</h1>
                         <h1 className="text-red-500 text-2xl font-bold">{prop.price}</h1>
+                        <p className="pt-3">{prop.segment_name}, {prop.area}</p>
                         <p className="py-3">{prop.description}</p>
                         <p className=" py-4 flex items-center"><FaLocationDot />{prop.location}</p>
                         <div className="card-actions justify-start">
