@@ -10,7 +10,7 @@ const Login = () => {
     // console.log(userInfo);
 
 
-    const { loginUser, googleLogin, setUser, user } = useContext(AuthContext)
+    const { loginUser, googleLogin, setUser, user, githubLogin} = useContext(AuthContext)
     // console.log(registerUser);
     const location = useLocation()
     const navigate = useNavigate()
@@ -27,6 +27,11 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
         googleLogin()
+            .then(result => setUser(result.user))
+    }
+
+    const handleGithubLogin = () => {
+        githubLogin()
             .then(result => setUser(result.user))
     }
 
@@ -77,8 +82,13 @@ const Login = () => {
                                 </Link>
                             </p>
                         </form>
-                        <div className="flex justify-evenly m-9">
-                            <button onClick={handleGoogleLogin} className="btn btn-primary">Google Login</button>
+                        <div className=" flex justify-evenly">
+                        <div className="flex justify-evenly my-9">
+                            <button onClick={handleGoogleLogin} className="btn btn-primary">Google</button>
+                        </div>
+                        <div className="flex justify-evenly my-9">
+                            <button onClick={handleGithubLogin} className="btn btn-primary">Github</button>
+                        </div>
                         </div>
                     </div>
                 </div>

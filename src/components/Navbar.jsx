@@ -5,12 +5,13 @@ import { AuthContext } from './AuthProvider';
 
 const Navbar = () => {
 
-    const {user, logOut} = useContext(AuthContext)
-    // console.log(user.email);
+    const { user, logOut } = useContext(AuthContext)
+    // console.log(user?.displayName);
+    // console.log(user?.photoURL);
 
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-100 mb-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,7 +45,7 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end flex items-center">
                     <ul className="menu menu-horizontal px-1 gap-4">
                         <li>
                             <NavLink to={'/update-profile'}>Update Profile</NavLink>
@@ -60,16 +61,25 @@ const Navbar = () => {
                             <NavLink to={'/register'}>Logout</NavLink>
                         </li> */}
                     </ul>
-                    {user ? 
                     <div>
-                        {user.email}
-                        <button onClick={()=>logOut()} className='btn btn-primary'>Logout</button>
-                        
-                    </div> : 
-                    <ul>
-                        <li><NavLink to={'/login'}>Login</NavLink></li>
-                    </ul>
-                    }
+                        {user ?
+                            <div className='flex justify-center items-center gap-5'>
+                                <div className="text-black avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                    <div className="w-12 rounded-full">
+                                        <img src={user?.photoURL} />
+                                    </div>
+                                    {/* <div className="tooltip tooltip-open tooltip-bottom" data-tip="hello">
+                                        <button className="btn">Bottom</button>
+                                    </div> */}
+                                </div>
+                                <button onClick={() => logOut()} className='btn btn-sm btn-primary'>Logout</button>
+
+                            </div> :
+                            <ul>
+                                <li><NavLink to={'/login'}>Login</NavLink></li>
+                            </ul>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
