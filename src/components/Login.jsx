@@ -3,6 +3,9 @@ import { Helmet } from "react-helmet-async";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
 
@@ -26,9 +29,10 @@ const Login = () => {
         console.log(email, password);
 
         loginUser(email, password)
-            .then(result => { 
+            .then(result => {
                 // console.log(result.message);
-                setLoginSuccess(result.message) })
+                setLoginSuccess(result.message)
+            })
             .catch(error => {
                 // console.log(error);
                 setLoginError(error.message)
@@ -53,12 +57,15 @@ const Login = () => {
         }
     }, [user])
 
+    // const logerror = () => toast({loginError});
+    // const logsuccess = () => toast({loginSuccess});
 
     return (
         <div>
             <Helmet>
                 <title>Dwellics | Login</title>
             </Helmet>
+            <ToastContainer />
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
@@ -94,35 +101,35 @@ const Login = () => {
                             </p>
                         </form>
 
-                            {
-                                loginError &&(
-                                <div className="toast toast-top toast-end">
-                                    <div className="bg-red-400 alert alert-info">
-                                        <span className="text-white">{loginError}</span>
-                                    </div>
-                                </div>)
-                            }
-                            {
-                                loginSuccess &&(
+                        {
+                            loginError && toast("Invalid Username/Password")
+                        }
+
+                        {
+                            loginSuccess && toast("Login Successful")
+                        }
+
+                        {/* {
+                            loginSuccess && (
                                 <div className="toast toast-top toast-end">
                                     <div className="bg-green-400 alert alert-info">
                                         <span className="text-white">{loginSuccess}</span>
                                     </div>
                                 </div>)
-                            }
-                            <div className=" flex justify-evenly">
-                                <div className="flex justify-evenly mb-6">
-                                    <button onClick={handleGoogleLogin} className="btn btn-primary">Google</button>
-                                </div>
-                                <div className="flex justify-evenly mb-6">
-                                    <button onClick={handleGithubLogin} className="btn btn-primary">Github</button>
-                                </div>
+                        } */}
+                        <div className=" flex justify-evenly">
+                            <div className="flex justify-evenly mb-6">
+                                <button onClick={handleGoogleLogin} className="btn btn-primary">Google</button>
+                            </div>
+                            <div className="flex justify-evenly mb-6">
+                                <button onClick={handleGithubLogin} className="btn btn-primary">Github</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            );
+        </div>
+    );
 };
 
-            export default Login;
+export default Login;
