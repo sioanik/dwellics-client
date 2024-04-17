@@ -17,6 +17,7 @@ const Register = () => {
     const { registerUser, setUser, user } = useContext(AuthContext)
     // console.log(authInfo.registerUser);
     const [error, setError] = useState('')
+    const [success, setSuccess] = useState('')
 
     const [showPass, setShowPass] = useState(false)
 
@@ -113,9 +114,19 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>
                             </div>
+
                             {
-                                error && <small className="text-red-500">{error}</small>
+                                error && (
+                                    <div className="toast toast-top toast-end">
+                                        <div className="bg-red-400 alert alert-info">
+                                            <span className="text-white">{error}</span>
+                                        </div>
+                                    </div>)
                             }
+
+                            {/* {
+                                error && <small className="text-red-500">{error}</small>
+                            } */}
 
                             <p>
                                 Already registered? Please <Link to={'/login'}>

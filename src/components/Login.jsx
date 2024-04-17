@@ -26,9 +26,11 @@ const Login = () => {
         console.log(email, password);
 
         loginUser(email, password)
-            .then(result => { console.log(result.user) })
+            .then(result => { 
+                // console.log(result.message);
+                setLoginSuccess(result.message) })
             .catch(error => {
-                console.log(error);
+                // console.log(error);
                 setLoginError(error.message)
             })
     }
