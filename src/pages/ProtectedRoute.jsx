@@ -6,7 +6,7 @@ import { AuthContext } from '../components/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
 
 const UpdateProfile = ({ children }) => {
-    console.log(children);
+    // console.log(children);
     const location = useLocation()
     const { user, loading } = useContext(AuthContext)
     if(loading){

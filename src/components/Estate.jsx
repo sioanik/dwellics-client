@@ -1,6 +1,11 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
+import { FaArrowRight } from "react-icons/fa";
+
+import 'animate.css';
+
+
 const Estate = ({ property }) => {
 
     // console.log(property.image);
@@ -29,7 +34,7 @@ const Estate = ({ property }) => {
 
         <div>
             <div className="card max-w-96 bg-base-100 shadow-xl">
-                <figure><img className="h-60 rounded-3xl" src={property.image} alt="" /></figure>
+                <figure><img data-aos="zoom-in" className="h-60 rounded-3xl" src={property.image} alt="" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
                         {property.title}
@@ -57,7 +62,7 @@ const Estate = ({ property }) => {
                         <button className="btn btn-primary">Details</button>
                     </div> */}
                     <Link to={`/property/${property.id}`} className="pt-4 card-actions justify-center">
-                    <button className="btn w-full btn-primary">Details</button>
+                    <button className="btn w-full btn-primary">Details <FaArrowRight className="animate__animated animate__flash" /></button>
                     </Link>
                     
                 </div>

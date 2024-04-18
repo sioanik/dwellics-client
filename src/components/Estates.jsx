@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Estate from "./Estate";
 
 
+
 const Estates = () => {
 
    const [properties, setProperties] = useState([])

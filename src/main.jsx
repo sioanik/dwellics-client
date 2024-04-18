@@ -20,6 +20,7 @@ import AuthProvider from './components/AuthProvider';
 import ProtectedRoute from './pages/ProtectedRoute';
 import Profile from './components/Profile';
 import Exclusive from './pages/Exclusive';
+import { ToastContainer } from 'react-toastify';
 
 const router = createBrowserRouter([
   {
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/update-profile',
-        element:<ProtectedRoute>
+        element: <ProtectedRoute>
           <Profile></Profile>
         </ProtectedRoute>
       },
@@ -70,7 +71,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
       <AuthProvider>
+        
         <RouterProvider router={router} />
+        <ToastContainer />
       </AuthProvider>
     </HelmetProvider>
 

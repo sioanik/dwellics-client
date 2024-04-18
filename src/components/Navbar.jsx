@@ -2,12 +2,16 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
+// import { useForm } from 'react-hook-form';
 
 const Navbar = () => {
+
+    
 
     const { user, logOut } = useContext(AuthContext)
     // console.log(user?.displayName);
     // console.log(user?.photoURL);
+
 
     return (
         <div>
@@ -63,9 +67,11 @@ const Navbar = () => {
                         {/* <li>
                             <NavLink to={'/login'}>Login</NavLink>
                         </li> */}
+
                         <li>
                             <NavLink to={'/register'}>Register</NavLink>
                         </li>
+
                         {/* <li>
                             <NavLink to={'/register'}>Logout</NavLink>
                         </li> */}

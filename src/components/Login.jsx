@@ -31,22 +31,26 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 // console.log(result.message);
-                setLoginSuccess(result.message)
+                // setLoginSuccess('Logged in successfully')
+                toast("Logged in successfully");
             })
             .catch(error => {
                 // console.log(error);
                 setLoginError(error.message)
+                toast("Invalid email/password");
             })
     }
 
     const handleGoogleLogin = () => {
         googleLogin()
             .then(result => setUser(result.user))
+            toast("Logging in");
     }
 
     const handleGithubLogin = () => {
         githubLogin()
             .then(result => setUser(result.user))
+            toast("Logging in");
     }
 
 
@@ -65,7 +69,7 @@ const Login = () => {
             <Helmet>
                 <title>Dwellics | Login</title>
             </Helmet>
-            <ToastContainer />
+            
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
@@ -106,7 +110,7 @@ const Login = () => {
                         } */}
 
                         
-                        {
+                        {/* {
                             loginError &&(
                                 <div className="toast toast-top toast-end">
                                     <div className="bg-red-400 alert alert-info">
@@ -122,7 +126,7 @@ const Login = () => {
                                         <span className="text-white">{loginSuccess}</span>
                                     </div>
                                 </div>)
-                        }
+                        } */}
                         <div className=" flex justify-evenly">
                             <div className="flex justify-evenly mb-6">
                                 <button onClick={handleGoogleLogin} className="btn btn-primary">Google</button>

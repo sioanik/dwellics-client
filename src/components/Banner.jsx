@@ -13,6 +13,14 @@ import banner3 from '../assets/banner3.jpg'
 import banner4 from '../assets/banner4.jpg'
 
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
+
+import 'animate.css';
+
+
 const Banner = () => {
     return (
         <div>
@@ -32,7 +40,7 @@ const Banner = () => {
                     <div className="hero h-[600px]" style={{ backgroundImage: `url(${banner1})` }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
-                            <div className="max-w-md">
+                            <div data-aos="fade-up" className="max-w-md">
                                 <h1 className="mb-5 text-3xl font-bold">Luxury Living</h1>
                                 <p className="mb-5">Elevate your lifestyle with our exclusive residential properties</p>
                                 <button className="btn btn-primary" ><a href="/contact">Contact</a></button>

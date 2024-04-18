@@ -2,7 +2,7 @@
 
 Welcome to Dwellics Real Estate, your one-stop destination for all your residential property needs. Explore our user-friendly website to find your dream home today!
 
-Live Site: [Dwellics Real Estate](https://dwellics-realestate.web.app)
+Live Site: [Dwellics Real Estate](https://dwellics.netlify.app/)
 
 ## Features and Characteristics:
 1. **Property Listings**: Browse through a wide range of residential properties including houses, apartments, condos, and more.
@@ -12,8 +12,8 @@ Live Site: [Dwellics Real Estate](https://dwellics-realestate.web.app)
 5. **Firebase User Authentication**: Securely access personalized features by signing in with Firebase user authentication.
 
 ## NPM Package Used:
-1. [Insert npm package name here]
-2. [Insert npm package name here]
-3. [Insert npm package name here]
+1. AOS Package,
+2. Swiper slider
+3. Animate.css
 
 We are committed to providing you with a seamless and efficient real estate experience. Start your journey with Dwellics Real Estate today!
