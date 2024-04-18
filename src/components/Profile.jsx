@@ -55,7 +55,7 @@ const Profile = () => {
 
     return (
         <div className='mx-auto'>
-            <div className=" border-4 rounded-2xl border-primary mx-auto p-8 flex gap-10 dark:bg-gray-50 dark:text-gray-800">
+            <div className="w-2/3 max-w-[500px] flex-col md:flex-row mx-auto border-4 rounded-2xl border-primary mx-auto p-8 flex gap-2 dark:bg-gray-50 dark:text-gray-800">
                 <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
                     <img src={user.photoURL} alt="" className="object-cover object-center w-full h-full rounded dark:bg-gray-500" />
                 </div>

@@ -33,7 +33,7 @@ const Estate = ({ property }) => {
         // </div>
 
         <div>
-            <div className="card max-w-96 bg-base-100 shadow-xl">
+            <div className="card mx-auto max-w-96 bg-base-100 shadow-xl">
                 <figure><img data-aos="zoom-in" className="h-60 rounded-3xl" src={property.image} alt="" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">

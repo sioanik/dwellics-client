@@ -22,7 +22,7 @@ const Estates = () => {
                 <p className="text-xl font-bold pb-6">Discover Your Dream Home</p>
                 <p>Explore a diverse selection of residential properties for sale and rent. Find the perfect space to suit your lifestyle and budget. Start your journey today!</p>
             </div>
-            <div className="grid md:grid-cols-2 gap-10 m-20">
+            <div className="grid md:grid-cols-2 gap-4 m-20">
             {
                 properties.map(property => <Estate key={property.id} property={property}></Estate>)
             }
