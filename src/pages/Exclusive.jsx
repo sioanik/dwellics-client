@@ -13,7 +13,7 @@ const Exclusive = () => {
                     Dwellics | Exclusive
                 </title>
             </Helmet>
-            <div>
+            <div className="px-10">
                 <div className="hero lg:w-2/3 mx-auto mb-10 rounded-3xl min-h-[300px]" style={{ backgroundImage: `url(${exclban})` }}>
                     <div className=" rounded-3xl hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
@@ -24,7 +24,7 @@ const Exclusive = () => {
                         </div>
                     </div>
                 </div>
-                <div className="hero min-h-screen bg-base-200 px-10">
+                <div className="hero min-h-screen bg-base-200 px-2 md:px-10">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <img src={excl} className="lg:w-1/2 rounded-lg shadow-2xl" />
                         <div className="lg:w-1/2">
@@ -33,7 +33,7 @@ const Exclusive = () => {
                             <h1 className="text-red-500 text-2xl font-bold">For sale</h1>
                             <h1 className="text-red-500 text-2xl font-bold">$600,000</h1>
                             <p className="py-3">Experience urban living in this stylish condo with panoramic city views. Located in downtown San Francisco, this residence offers luxury and convenience. Enjoy the spacious balcony, sleek design, and premium amenities including a gym and swimming pool.</p>
-                            <p className=" py-4 flex items-center"><FaLocationDot />Downtown Core, San Francisco</p>
+                            <p className=" py-4 flex gap-4 items-center"><FaLocationDot />Downtown Core, San Francisco</p>
                             <div className="card-actions justify-start">
                                 {/* <div className="badge badge-outline">Fashion</div>
                         <div className="badge badge-outline">Products</div> */}

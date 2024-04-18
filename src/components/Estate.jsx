@@ -42,12 +42,12 @@ const Estate = ({ property }) => {
                     </h2>
                     <p className="text-red-500 text-3xl">{property.price}</p>
                     <p className="text-red-500 text-xl">For {property.status}</p>
-                    <div className="flex py-4">
+                    <div className="flex flex-col lg:flex-row py-4">
                         <p className="text-xl">{property.segment_name}</p>
                         <p className="text-xl flex items-center"> Area: {property.area}</p>
                     </div>
                     <p className="text-xl">{property.description}</p>
-                    <p className="text-xl py-4 flex items-center"><FaLocationDot />{property.location}</p>
+                    <p className="text-xl py-4 flex gap-4 items-center"><FaLocationDot />{property.location}</p>
 
 
                     <div className="card-actions justify-end">

@@ -74,6 +74,7 @@ const Register = () => {
                 // setLoginSuccess('Logged in successfully')
                 updateUserProfile(name, image)
                 .then(()=>{
+                    setUser({...user,  displayName: name, photoURL: image})
                     navigate('/update-profile')
                 })
                 setUser(result.user)

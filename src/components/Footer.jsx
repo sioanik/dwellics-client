@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-base-300 text-base-content">
+            <footer className="footer p-10 bg-base-300 text-base-content flex flex-col md:flex-row justify-around">
                 <div className='w-60'>
                     <h3 className='footer-title'>About</h3>
                     <p>Dwellics is committed to delivering a high level of expertise, customer service, and attention to detail to the marketing and sales of luxury real estate, and rental properties.

@@ -12,7 +12,7 @@ const Contact = () => {
             </Helmet>
             <div className='flex flex-col md:flex-row justify-around my-20 mx-20'>
 
-                <div className='bg-slate-300 rounded-3xl px-4 w-60 flex flex-col justify-center gap-10'>
+                <div className='bg-slate-300 py-10 rounded-3xl px-4 w-60 flex flex-col justify-center gap-10'>
 
                     <p className="flex flex-row items-center gap-2"><FaLocationDot /> 9599 Erie Rd, Angola, NY, 14006</p>
                     <p className="flex flex-row items-center gap-2"><FaPhoneAlt /> (716) 780-7498</p>
